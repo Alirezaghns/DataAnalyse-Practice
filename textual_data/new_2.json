@@ -1,0 +1,38 @@
+{
+    [
+        {
+            "first_name": "ALIREZA",
+            "last_name": "MORTEZAEI",
+            "age": 23,
+            "courses": [
+                "Python",
+                "Django",
+                "Docker"
+            ],
+            "is_student": true,
+            "teamate": {
+                "first_name": "David",
+                "last_name": "Doe",
+                "age": 35,
+                "is_student": false
+            }
+        },
+        {
+            "first_name": "ALIREZA",
+            "last_name": "MORTEZAEI",
+            "age": 23,
+            "courses": [
+                "Python",
+                "Django",
+                "Docker"
+            ],
+            "is_student": true,
+            "teamate": {
+                "first_name": "David",
+                "last_name": "Doe",
+                "age": 35,
+                "is_student": false
+            }
+        }
+    ]
+}
