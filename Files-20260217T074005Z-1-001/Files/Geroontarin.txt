@@ -1,0 +1,7 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+
+----liste mahsoolat az grantarin b arzoontarin
+USE Northwind
+SELECT TOP(11) WITH TIES ProductName , Price
+FROM Products
+ORDER BY Price DESC

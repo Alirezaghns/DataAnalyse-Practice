@@ -1,0 +1,11 @@
+--ROW_Number()
+--سفارش های هر مشتری به ترتیب تاریخ شماره گذاری کنید
+SELECT CustomerID , OrderID , OrderDate ,
+	ROW_NUMBER() OVER (
+	PARTITION BY CustomerId 
+	ORDER BY Orderdate 
+
+)AS RomNUM
+FROM Orders
+
+SELECT NEWID()

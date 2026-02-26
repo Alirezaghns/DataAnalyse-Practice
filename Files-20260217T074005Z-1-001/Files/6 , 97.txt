@@ -1,0 +1,8 @@
+--liste mahsoolati mikhaym k gheymateshoon = 6 , 97
+
+USE Northwind
+SELECT ProductName , Price
+FROM Products
+--WHERE Price = 6 OR Price = 97
+WHERE Price IN (6,97)
+ORDER BY Price ASC

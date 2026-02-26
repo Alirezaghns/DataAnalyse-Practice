@@ -1,0 +1,15 @@
+--SP
+--gozareshi tahie konid k k ba vodooide name keshbar fehreste moshtarian an keshvar namayesh dade shavad
+
+CREATE PROCEDURE  usp_GetCustomerByCountry
+@Country Nvarchar(50)
+AS
+BEGIN
+SELECT CustomerID , CompanyName , City , Country
+FROM Customers
+WHERE Country = @Country
+ORDER BY CompanyName
+END
+GO
+
+EXEC usp_GetCustomerByCountry @Country = N'Germany'

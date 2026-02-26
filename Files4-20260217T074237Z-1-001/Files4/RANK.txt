@@ -1,0 +1,15 @@
+--Rank
+--مشتری هارا بر اساس تعداد سفارش رتبه بندی کنیم
+SELECT CustomerID , COUNT(*) AS TotalOrders ,
+	RANK() Over (
+	Order By Count(*) DESC
+	) AS RankNo
+FROM Orders
+Group By CustomerID
+
+SELECT O.EmployeeID , E.FirstName + ' ' + E.LastName AS FullName , COUNT(*) AS TotalOrders ,
+	RANK() OVER (
+	Order by COUNT(*) DESC
+	) AS RANKNo
+FROM Orders O INNER JOIN Employees E ON E.EmployeeID = O.EmployeeID
+GROUP BY O.EmployeeID , E.FirstName , E.LastName

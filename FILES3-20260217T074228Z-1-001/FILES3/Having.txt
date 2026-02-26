@@ -1,0 +1,7 @@
+--mikhayim tedad sefareshhaye har moshtari ro hesab konim va faghat moshtarii hayi k balaye 5 sefaresh darand ra gozaresh bdim
+
+SELECT CustomerID , COUNT(OrderID) AS TOTALORDERS
+FROM Northwind..Orders
+GROUP BY CustomerID
+HAVING COUNT(OrderID) > 5
+ORDER BY TOTALORDERS  

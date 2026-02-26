@@ -1,0 +1,9 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+--liste karmandayi k balaye 70 sal darand
+USE Northwind
+SELECT FirstName + ' ' + LastName AS FULLNAME
+, BirthDate , YEAR(BirthDate) AS YearBirthDate , YEAR(GETDATE()) AS TODAYEDATE
+, (YEAR(GETDATE()) - YEAR(BirthDate)) AS AGE
+FROM Employees
+WHERE (YEAR(GETDATE()) - YEAR(BirthDate)) < 70
+ORDER BY  AGE , FULLNAME

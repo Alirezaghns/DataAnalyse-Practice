@@ -1,0 +1,23 @@
+--mikhahim faghat 3 harf aval har moshtari ra neshan dahim
+SELECT CustomerID , LEFT(CustomerID , 3) AS threeLetters
+FROM Northwind..Customers
+
+
+--mikhahim faghat 3 Akher aval har moshtari ra neshan dahim
+SELECT CustomerID , RIGHT(CustomerID , 3) AS threeLetters
+FROM Northwind..Customers
+
+
+--mikhahim toole esme shahre har moshtari ra hesab konim
+SELECT CustomerID , City , LEN(City) AS CityLength
+FROM Northwind..Customers
+
+
+--mikhahim az esme mahsool , horoofe 5 ta 10 ra joda konim
+SELECT ProductName , SUBSTRING(ProductName , 5 , 6) AS PartOFNAME
+FROM Northwind..Products
+
+
+--mikhahim dar name mahsoolat , hameye 'a' ra ba * jaygozin namayim
+SELECT ProductName , REPLACE(ProductName , 'a' , '****') AS REPLACEAtoSTAR
+FROM Northwind..Products

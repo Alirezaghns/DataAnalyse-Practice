@@ -1,0 +1,24 @@
+--گزارشی تهیه کنید که برای هر سفارش اطلاعات زیر را نمایش دهد
+--نام مشتری ، شماره سفارش، تاریخ سفارش
+--مشخص کنید هر سفارش چندمین سفارش آن مشتری می باشد
+--در صورتیکه یک مشتری چند سفارش در یک تاریخ داشته باشد رتبه بندی زمانی سفارش هارا نشان دهید
+--تاریخ سفارش قبلی همان مشتری را نمایش دهد
+--تاریخ سفارش بعدی همان مشتری را نمایش دهد
+SELECT CustomerID , OrderID , OrderDate ,
+	ROW_Number() OVER (
+	PARTITION BY CustomerId
+	Order BY Orderdate
+	) AS RowNUM , 
+	RANK() OVER(
+	PARTITION BY CustomerID
+	Order BY OrderDate
+	) AS RANKNo,
+	LAG(OrderDate) OVER (
+	PARTITION BY CustomerID
+	Order BY OrderDate
+	)AS PreviousOrderDate,
+	LEAD(OrderDate) OVER (
+	PARTITION BY CustomerID
+	Order BY OrderDate
+	)AS NextOrderDate
+FROM Orders

@@ -1,0 +1,8 @@
+--liste mahsoolati mikhaym k gheymateshoon 6 nabashad
+
+USE Northwind
+SELECT ProductName , Price
+FROM Products
+--WHERE Price != 6
+--WHERE Price NOT IN (6)
+WHERE Price <> 6

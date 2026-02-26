@@ -1,0 +1,22 @@
+--FUNCTION
+--Table
+--Tabee tarahi konid k ba vorode code karmand tamame sefareshar an ra namayesh dahad
+CREATE OR ALTER FUNCTION udf_GetOrdersBtEmploee(@EmpoleeID INT)
+RETURNS TABLE 
+AS
+RETURN(
+
+SELECT O.OrderID , SUM (od.UnitPrice * od.Quantity) AS TotalAmount , c.CompanyName , o.OrderDate
+FROM ORDERS o
+INNER JOIN [Order Details] od ON od.OrderID = o.OrderID
+INNER JOIN Customers c ON c.CustomerID = o.CustomerID
+WHERE o.EmployeeID = @EmpoleeID
+GROUP BY o.OrderID , CompanyName , o.OrderDate
+
+
+
+)
+GO
+
+
+SELECT * FROM [dbo].[udf_GetOrdersBtEmploee](5)

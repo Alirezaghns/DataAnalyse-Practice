@@ -1,0 +1,13 @@
+--VIEW
+-- Gozareshi amade konid k name moshtari keshvar karmand va majmooe mablaghe sefatesh ra namayesh dahad
+CREATE OR ALTER VIEW vw_CustomerOrdersSummary AS
+
+SELECT o.OrderID , (e.FirstName + ' ' + e.LastName) AS FULLNAME ,c.CompanyName 
+, c.Country , SUM(od.Quantity * od.UnitPrice) AS TotalAmount , c.City
+FROM Orders o 
+INNER JOIN [Order Details] od ON o.OrderID = od.OrderID
+INNER JOIN Customers c ON c.CustomerID = o.CustomerID
+INNER JOIN Employees e ON e.EmployeeID = o.EmployeeID
+Group BY o.OrderID , e.FirstName , e.LastName , c.CompanyName , c.Country ,c.City
+
+SELECT TotalAmount FROM vw_CustomerOrdersSummary

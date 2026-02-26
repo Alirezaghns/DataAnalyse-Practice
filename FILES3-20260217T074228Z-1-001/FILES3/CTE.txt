@@ -1,0 +1,12 @@
+--CTE
+--gozareshi tahie konid az majmoo forooshe har karmand
+SELECT * FROM Orders
+;WITH EployeesSales AS (
+SELECT  SUM(od.Quantity * od.UnitPrice) AS TOTALSALES , e.EmployeeID ,e.FirstName , e.LastName
+FROM Orders o 
+INNER JOIN [Order Details] od ON od.OrderID = o.OrderID
+INNER JOIN Employees e ON e.EmployeeID = o.EmployeeID
+GROUP BY o.OrderID ,e.EmployeeID ,e.FirstName , e.LastName
+
+)
+SELECT * FROM EployeesSales ORDER BY TOTALSALES

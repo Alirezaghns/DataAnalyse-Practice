@@ -1,0 +1,14 @@
+--سفارش هایی رو که در سال 1996 بودند رو قدیمی
+--سال 1997 وسط
+--3 ماه اول 98 بودند اخیر
+--بعد از 3 ماه جدید
+SELECT OrderID , OrderDate ,
+	CASE
+	WHEN OrderDate < '1997-01-01' THEN 'قدیمی'
+	WHEN OrderDate < '1998-01-01' AND OrderDate >'1997-01-01'THEN 'وسطی'
+	WHEN OrderDate < '1998-04-01' AND OrderDate >='1998-01-01'THEN 'اخیر'
+
+	ELSE 'جدید'
+	END AS وضعیت
+FROM Orders
+

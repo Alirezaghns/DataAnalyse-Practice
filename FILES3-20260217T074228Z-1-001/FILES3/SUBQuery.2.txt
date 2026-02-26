@@ -1,0 +1,5 @@
+--gozareshi tahie konid az moshtariani k sefaresh kardand
+
+SELECT CustomerID , CompanyName
+FROM Customers
+WHERE CustomerID IN (SELECT CustomerID FROM Orders)

@@ -1,0 +1,14 @@
+--سفارش های بالای 100 دلار گرون
+--کمتر از 100 و بزرگتر از 10 معقول
+--کمتر 10 ارزون
+--کمتر یا مساوی 5 عدم تخفیف در بلک فرایدی
+SELECT o.OrderID , UnitPrice ,o.CustomerID , e.FirstName + ' ' + e.LastName AS FullName,
+	CASE
+	WHEN UnitPrice > 100 THEN 'گران' 
+	WHEN UnitPrice < 100 AND UnitPrice >= 10 THEN 'معقول'
+	WHEN UnitPrice < 10 AND UnitPrice > 5 THEN 'ارزان'
+	ELSE 'عدم تخفیف'
+	END AS وضعیت
+FROM [Order Details] od INNER JOIN Orders o ON o.OrderID = od.OrderID
+INNER JOIN Employees e ON e.EmployeeID = o.EmployeeID
+Order By UnitPrice DESC

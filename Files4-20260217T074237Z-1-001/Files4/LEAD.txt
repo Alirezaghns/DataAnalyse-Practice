@@ -1,0 +1,14 @@
+--LEAD()
+--SELECT
+--LEAD(Column_Name) OVER(
+--PARTITION BY 
+--ORDER BY
+
+--) AS NEXTOrderDate
+--گزارشی تهیه کنید که تاریخ سفارش بعدی هر مشتری را نمایش دهد
+SELECT CustomerID , OrderID , OrderDate ,
+	LEAD(OrderDate) OVER (
+	PARTITION BY CustomerID
+	ORDER BY OrderDate ASC
+	) AS NEXTOrderDate
+FROM Orders

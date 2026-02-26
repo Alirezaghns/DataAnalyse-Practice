@@ -1,0 +1,15 @@
+--LAG
+--SELECT
+--LAG(Column_Name) OVER (
+--PARTITION BY ...
+--ORDER BY ..
+
+--)AS LAGNo
+
+--گزارشی میخواهیم که سفارش فعلی را با قبلی مقایسه نماید
+SELECT CustomerID , OrderID , OrderDate ,
+	LAG(OrderDate) OVER (
+	PARTITION BY CUSTOMERID
+	ORDER BY OrderDate ASC
+	) AS GhiasBaGhabli
+FROM Orders

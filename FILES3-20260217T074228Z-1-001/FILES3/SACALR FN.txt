@@ -1,0 +1,19 @@
+--FUNCTION
+--SACALR
+--tabee tarahi konid k gheymate nahayi yek sefaresh ra ba jame gheymate aghlam mohasabe konid
+
+CREATE FUNCTION udf_GerOrderTotal (@OrderID INT)
+RETURNS MONEY
+AS
+BEGIN
+DECLARE @TOTAL Money;
+SELECT @TOTAL = SUM (UnitPrice  Quantity)
+FROM [Order Details]
+WHERE OrderID = @OrderID
+RETURN @TOTAL
+END
+GO
+
+
+
+SELECT [dbo].[udf_GerOrderTotal](10248) AS SEFARESH

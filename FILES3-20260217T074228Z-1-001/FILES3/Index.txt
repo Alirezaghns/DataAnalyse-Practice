@@ -1,0 +1,9 @@
+SET STATISTICS IO , TIME ON
+SELECT EmployeeID , FirstName , LastName  ,[BirthDate]
+      ,[HireDate]
+      ,[Address]
+      ,[City]
+      ,[Region]
+      ,[PostalCode]
+      ,[Country]FROM Employees
+WHERE City = 'London'

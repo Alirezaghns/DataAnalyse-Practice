@@ -1,0 +1,5 @@
+--CROSS JOIN
+--gozareshi az tamami tarkib haye momken mian dastebandiha va taminkonandegan tahie konid
+SELECT c.CategoryName , s.CompanyName AS Supplier
+FROM Categories c 
+CROSS JOIN Suppliers s

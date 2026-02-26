@@ -1,0 +1,92 @@
+ALTER INDEX ALL ON Employees
+   REORGANIZE;
+
+
+   ALTER INDEX ALL ON Employees
+   Rebuild;
+
+   ALTER INDEX LastName ON Employees
+   REORGANIZE;
+
+      ALTER INDEX LastName ON Employees
+   rebuild;
+
+
+
+
+
+
+
+   use [Northwind];
+GO
+use [master];
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Categories] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[CustomerCustomerDemo] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[CustomerDemographics] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Customers] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Employees] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[EmployeeTerritories] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[myTable] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Order Details] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Orders] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Products] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Region] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Shippers] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Suppliers] 
+WITH FULLSCAN
+GO
+use [Northwind]
+GO
+UPDATE STATISTICS [dbo].[Territories] 
+WITH FULLSCAN

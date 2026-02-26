@@ -1,0 +1,6 @@
+--liste mahsoolati mikhaym k gheymateshoon az 100 dolar bishtar bashad
+
+USE Northwind
+SELECT ProductName , Price
+FROM Products
+WHERE Price >124

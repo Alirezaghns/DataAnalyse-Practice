@@ -1,0 +1,7 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+--List Sefareshhayi k beyne Tarikhe 1996-07-04 00:00:00.000 , 1997-07-04 00:00:00.000
+--kasi k sabtesh va kasi k kharide
+USE Northwind
+SELECT OrderID , CustomerID , EmployeeID , OrderDate
+From Orders
+WHERE OrderDate Between '1996-07-04 00:00:00.000' AND '1996-08-04 00:00:00.000'

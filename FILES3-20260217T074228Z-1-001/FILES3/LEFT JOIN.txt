@@ -1,0 +1,9 @@
+--LEFT JOIN
+--gozareshi tahie konid k name tamami moshtarian ra b hamrahe tarikhe sefaresh anha neshan dahad
+--hata agar hanooz sefareshi sabt nakarde bashand!!!
+
+SELECT c.CompanyName , MAX(o.OrderDate) AS LASTORDER
+FROM Customers c
+LEFT JOIN Orders o ON o.CustomerID = c.CustomerID
+--WHERE o.CustomerID IS NULL
+GROUP BY c.CompanyName

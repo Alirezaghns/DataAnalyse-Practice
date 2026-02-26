@@ -1,0 +1,2 @@
+SELECT OrderID,OrderDate, FORMAT(OrderDate,'yyyy/MM/dd HH:mm','fa-IR') AS PerDate
+FROM ORDERS

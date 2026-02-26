@@ -1,0 +1,6 @@
+--right join
+--gozareshi az tamami sefareshha tahie konid hata ag moshtari An sefaresh dar system vojoon nadashte bashad
+
+SELECT c.CompanyName , o.OrderID ,o.OrderDate
+FROM Customers c
+RIGHT JOIN Orders o ON o.CustomerID = c.CustomerID

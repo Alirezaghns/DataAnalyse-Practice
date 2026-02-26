@@ -1,0 +1,21 @@
+--TEMP TABLE
+CREATE TABLE #TEST (
+id int not null
+)
+
+
+
+INSERT INTO #TEST 
+VALUES('1')
+SELECT * FROM #TEST
+
+DROP TABLE #TEST
+
+
+CREATE TABLE ##TEST
+(id int not null,fisrtname nvarchar(50) null)
+
+INSERT INTO ##TEST
+VALUES ('1' , 'Parham')
+
+SELECT * FROM ##TEST

@@ -1,0 +1,8 @@
+--Reporti bedahid az tamame moshtariha
+--Report name tamame moshtariha b hamrahe shahr
+--Report name moshtarihayi bedid ke dar shahr berlin
+--Report name moshtarihayi bedid ke dar keshvar Germany va ba code posti -12209
+USE Northwind
+SELECT CustomerName  , City ,Country , PostalCode 
+From Customers 
+WHERE Country = 'Germany' AND PostalCode = 12209

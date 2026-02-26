@@ -1,0 +1,12 @@
+--gozareshi begirid k che kasi sefaresh shoare 10248 ra sabt karde ast
+
+SELECT o.OrderID , o.EmployeeID , (e.FirstName + ' ' + e.LastName) AS FULLNAME , e.HireDate , od.Quantity , p.ProductName
+,od.UnitPrice , SUM(od.Quantity*od.UnitPrice) AS SUMUNIT
+FROM ORDERS o 
+INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID
+INNER JOIN [Order Details] od ON o.OrderID = od.OrderID
+INNER JOIN Products p ON p.ProductID = od.ProductID
+WHERE o.OrderID = 10248
+GROUP BY o.OrderID , o.EmployeeID , (e.FirstName + ' ' + e.LastName)  , e.HireDate , od.Quantity , p.ProductName
+,od.UnitPrice 
+ORDER BY p.ProductName
